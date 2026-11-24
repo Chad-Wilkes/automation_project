@@ -9,15 +9,15 @@ class LoginPage extends Page {
      * define selectors using getter methods
      */
     get inputUsername () {
-        return $('#username');
+        return $('[name="username"]');
     }
 
     get inputPassword () {
-        return $('#password');
+        return $('[name="password"]');
     }
 
     get btnSubmit () {
-        return $('button[type="submit"]');
+        return $('button.fui-Button');
     }
 
     /**
@@ -34,7 +34,7 @@ class LoginPage extends Page {
      * overwrite specific options to adapt it to page object
      */
     open () {
-        return super.open('login');
+        return super.open();
     }
 }
 

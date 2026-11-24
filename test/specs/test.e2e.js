@@ -5,11 +5,12 @@ import SecurePage from '../pageobjects/secure.page.js'
 describe('My Login application', () => {
     it('should login with valid credentials', async () => {
         await LoginPage.open()
-
-        await LoginPage.login('tomsmith', 'SuperSecretPassword!')
+        await browser.pause(3000)
+        await LoginPage.login('chad.wilkes1462@stu.mtec.edu', 'SoftwareQA#26')
+        await browser.pause(3000)
         await expect(SecurePage.flashAlert).toBeExisting()
         await expect(SecurePage.flashAlert).toHaveText(
-            expect.stringContaining('You logged into a secure area!'))
+            expect.stringContaining('Dashboard'))
     })
 })
 
